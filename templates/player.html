@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        {{ player }} - MHWilds TA
+    </title>
+
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="header-inner">
+
+        <a
+            href="/"
+            class="logo"
+        >
+            MHWilds TA
+        </a>
+
+
+        <nav>
+
+            <a href="/">
+                Ranking
+            </a>
+
+            <a href="/quests">
+                Quests
+            </a>
+
+            <a href="/rules">
+                Rules
+            </a>
+
+            <a href="/admin">
+                Admin
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+<section class="player-page">
+
+
+    <div class="player-page-title">
+
+        <p>
+            MONSTER HUNTER WILDS
+        </p>
+
+        <h1>
+            {{ player }}
+        </h1>
+
+        <span>
+            PLAYER PROFILE
+        </span>
+
+    </div>
+
+
+
+    <div class="player-stat">
+
+        <span>
+            TOTAL RECORDS
+        </span>
+
+        <strong>
+            {{ records|length }}
+        </strong>
+
+    </div>
+
+
+
+    <section class="player-records">
+
+
+        <div class="player-record-header">
+
+            <span>
+                QUEST
+            </span>
+
+            <span>
+                WEAPON
+            </span>
+
+            <span>
+                TIME
+            </span>
+
+            <span>
+                PLATFORM
+            </span>
+
+            <span>
+                VIDEO
+            </span>
+
+        </div>
+
+
+
+        {% for record in records %}
+
+
+        <a
+            href="/record/{{ record['id'] }}"
+            class="player-record"
+        >
+
+
+            <span class="player-quest">
+
+                {{ record['quest'] }}
+
+            </span>
+
+
+            <span>
+
+                {{ record['weapon'] }}
+
+            </span>
+
+
+            <strong class="player-record-time">
+
+                {{ '%02d:%05.2f'|format(
+                    record['time'] // 60,
+                    record['time'] % 60
+                ) }}
+
+            </strong>
+
+
+            <span>
+
+                {{ record['platform'] }}
+
+            </span>
+
+
+            <span>
+
+                {% if record['video_url'] %}
+
+                    ▶
+
+                {% else %}
+
+                    -
+
+                {% endif %}
+
+            </span>
+
+
+        </a>
+
+
+        {% endfor %}
+
+
+    </section>
+
+
+
+    <div class="player-back">
+
+        <a href="/">
+
+            ← BACK TO RANKING
+
+        </a>
+
+    </div>
+
+
+</section>
+
+
+</main>
+
+
+</body>
+
+</html>

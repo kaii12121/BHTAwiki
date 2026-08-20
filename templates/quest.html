@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Quests - MHWilds TA
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="header-inner">
+
+        <a
+            href="/"
+            class="logo"
+        >
+            MHWilds TA
+        </a>
+
+
+        <nav>
+
+            <a href="/">
+                Ranking
+            </a>
+
+            <a href="/quests">
+                Quests
+            </a>
+
+            <a href="/rules">
+                Rules
+            </a>
+
+            <a href="/admin">
+                Admin
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+<section class="quests-page">
+
+
+    <div class="quests-title">
+
+        <p>
+            MONSTER HUNTER WILDS
+        </p>
+
+        <h1>
+            QUESTS
+        </h1>
+
+        <span>
+            TIME ATTACK QUEST LIST
+        </span>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         SEARCH
+    ================================================== -->
+
+    <form
+        method="GET"
+        action="/quests"
+        class="quest-search"
+    >
+
+        <input
+            type="text"
+            name="search"
+            value="{{ search }}"
+            placeholder="クエスト名を検索..."
+            autocomplete="off"
+        >
+
+
+        <button type="submit">
+
+            SEARCH
+
+        </button>
+
+
+        {% if search %}
+
+        <a href="/quests">
+
+            CLEAR
+
+        </a>
+
+        {% endif %}
+
+    </form>
+
+
+
+    <!-- ==================================================
+         RESULT COUNT
+    ================================================== -->
+
+    <div class="quest-result-count">
+
+        {% if search %}
+
+            「{{ search }}」の検索結果：
+            <strong>
+                {{ quests|length }}
+            </strong>
+            件
+
+        {% else %}
+
+            全クエスト：
+            <strong>
+                {{ quests|length }}
+            </strong>
+            件
+
+        {% endif %}
+
+    </div>
+
+
+
+    <!-- ==================================================
+         QUEST LIST
+    ================================================== -->
+
+    <div class="quest-list">
+
+
+        {% for quest in quests %}
+
+
+        <a
+            href="/quest/{{ quest['name'] }}"
+            class="quest-card"
+        >
+
+
+            <div class="quest-card-number">
+
+                {{ "%02d"|format(loop.index) }}
+
+            </div>
+
+
+            <div class="quest-card-name">
+
+                <span>
+                    QUEST
+                </span>
+
+                <h2>
+                    {{ quest['name'] }}
+                </h2>
+
+            </div>
+
+
+            <div class="quest-card-arrow">
+
+                →
+
+            </div>
+
+
+        </a>
+
+
+        {% else %}
+
+
+        <div class="quest-empty">
+
+            <strong>
+                NO QUESTS FOUND
+            </strong>
+
+            <p>
+                条件に一致するクエストがありません。
+            </p>
+
+        </div>
+
+
+        {% endfor %}
+
+
+    </div>
+
+
+</section>
+
+
+</main>
+
+
+</body>
+
+</html>

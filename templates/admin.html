@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Admin - MHWilds TA
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="header-inner">
+
+        <a
+            href="/"
+            class="logo"
+        >
+            MHWilds TA
+        </a>
+
+
+        <nav>
+
+            <a href="/">
+                Ranking
+            </a>
+
+            <a href="/quests">
+                Quests
+            </a>
+
+            <a href="/rules">
+                Rules
+            </a>
+
+            <a href="/admin" class="active">
+                Admin
+            </a>
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+<section class="admin-page">
+
+
+    <div class="admin-title">
+
+        <p>
+            ADMINISTRATION
+        </p>
+
+        <h1>
+            ADMIN PANEL
+        </h1>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         ADD RECORD
+    =========================================== -->
+
+    <section class="admin-section">
+
+
+        <h2>
+            ADD RECORD
+        </h2>
+
+
+        <form
+            method="POST"
+            class="admin-form"
+        >
+
+
+            <label>
+                PLAYER
+            </label>
+
+            <input
+                type="text"
+                name="player"
+                placeholder="Player Name"
+                required
+            >
+
+
+            <label>
+                QUEST
+            </label>
+
+            <select
+                name="quest"
+                required
+            >
+
+                <option value="">
+                    SELECT QUEST
+                </option>
+
+
+                {% for quest in quests %}
+
+                <option value="{{ quest['name'] }}">
+
+                    {{ quest['name'] }}
+
+                </option>
+
+                {% endfor %}
+
+            </select>
+
+
+            <label>
+                WEAPON
+            </label>
+
+            <select
+                name="weapon"
+                required
+            >
+
+                <option value="">
+                    SELECT WEAPON
+                </option>
+
+
+                {% for weapon in weapons %}
+
+                <option value="{{ weapon['name'] }}">
+
+                    {{ weapon['name'] }}
+
+                </option>
+
+                {% endfor %}
+
+            </select>
+
+
+            <label>
+                TIME
+            </label>
+
+            <input
+                type="text"
+                name="time"
+                placeholder="02:31.42"
+                required
+            >
+
+
+            <label>
+                PLATFORM
+            </label>
+
+            <select
+                name="platform"
+                required
+            >
+
+                <option value="">
+                    SELECT PLATFORM
+                </option>
+
+
+                {% for platform in platforms %}
+
+                <option value="{{ platform['name'] }}">
+
+                    {{ platform['name'] }}
+
+                </option>
+
+                {% endfor %}
+
+            </select>
+
+
+            <label>
+                VIDEO URL
+            </label>
+
+            <input
+                type="url"
+                name="video_url"
+                placeholder="https://youtube.com/..."
+            >
+
+
+            <button
+                type="submit"
+                class="admin-save-button"
+            >
+
+                ADD RECORD
+
+            </button>
+
+
+        </form>
+
+
+    </section>
+
+
+
+    <!-- ==========================================
+         RECORD LIST
+    =========================================== -->
+
+    <section class="admin-section">
+
+
+        <div class="admin-section-header">
+
+            <h2>
+                RECORDS
+            </h2>
+
+
+            <a
+                href="/admin/backup"
+                class="backup-button"
+            >
+
+                BACKUP DATABASE
+
+            </a>
+
+        </div>
+
+
+
+        {% if records %}
+
+
+        <div class="admin-record-list">
+
+
+            {% for record in records %}
+
+
+            <div class="admin-record">
+
+
+                <div class="admin-record-info">
+
+
+                    <strong>
+                        {{ record['player'] }}
+                    </strong>
+
+
+                    <span>
+                        {{ record['quest'] }}
+                    </span>
+
+
+                    <span>
+                        {{ record['weapon'] }}
+                    </span>
+
+
+                    <strong class="admin-time">
+
+                        {{ '%02d:%05.2f'|format(
+                            record['time'] // 60,
+                            record['time'] % 60
+                        ) }}
+
+                    </strong>
+
+
+                    <span>
+                        {{ record['platform'] }}
+                    </span>
+
+
+                </div>
+
+
+
+                <div class="admin-record-actions">
+
+
+                    <a
+                        href="/admin/edit/{{ record['id'] }}"
+                        class="edit-button"
+                    >
+
+                        EDIT
+
+                    </a>
+
+
+                    <a
+                        href="/admin/delete/{{ record['id'] }}"
+                        class="delete-button"
+                        onclick="
+                            return confirm(
+                                'この記録を削除しますか？\n\nこの操作は元に戻せません。'
+                            );
+                        "
+                    >
+
+                        DELETE
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+            {% endfor %}
+
+
+        </div>
+
+
+        {% else %}
+
+
+        <div class="no-records">
+
+            <p>
+                NO RECORDS
+            </p>
+
+            <span>
+                登録されている記録はありません。
+            </span>
+
+        </div>
+
+
+        {% endif %}
+
+
+    </section>
+
+
+</section>
+
+
+</main>
+
+
+</body>
+
+</html>

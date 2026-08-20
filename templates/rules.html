@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Rules - MHWilds TA
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="header-inner">
+
+        <a
+            href="/"
+            class="logo"
+        >
+            MHWilds TA
+        </a>
+
+
+        <nav>
+
+            <a href="/">
+                Ranking
+            </a>
+
+
+            <a href="/quests">
+                Quests
+            </a>
+
+
+            <a
+                href="/rules"
+                class="active"
+            >
+                Rules
+            </a>
+
+
+            {% if session.get("admin_logged_in") %}
+
+            <a href="/admin">
+                Admin
+            </a>
+
+
+            <a href="/logout">
+                Logout
+            </a>
+
+            {% else %}
+
+            <a href="/login">
+                Login
+            </a>
+
+            {% endif %}
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+    <!-- =========================
+         TITLE
+    ========================= -->
+
+    <section class="ranking-title">
+
+        <p class="sub-title">
+            MONSTER HUNTER WILDS
+        </p>
+
+
+        <h1>
+            Time Attack Rules
+        </h1>
+
+
+        <p class="description">
+            MHWilds TA Database の記録登録ルール
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         BASIC RULES
+    ========================= -->
+
+    <section class="rules-card">
+
+
+        <div class="rules-header">
+
+            <span>
+                01
+            </span>
+
+
+            <div>
+
+                <h2>
+                    基本ルール
+                </h2>
+
+
+                <p>
+                    タイムアタック記録について
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="rules-content">
+
+
+            <div class="rule-item">
+
+                <div class="rule-number">
+                    01
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        クエストクリアタイムを記録
+                    </h3>
+
+
+                    <p>
+                        クエスト開始からモンスター討伐後の
+                        クリアタイムを記録します。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="rule-item">
+
+                <div class="rule-number">
+                    02
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        正確なタイムを登録
+                    </h3>
+
+
+                    <p>
+                        ゲーム内に表示されるタイムを基準として
+                        登録してください。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="rule-item">
+
+                <div class="rule-number">
+                    03
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        記録動画の提出
+                    </h3>
+
+
+                    <p>
+                        可能な限りプレイ動画を登録してください。
+                        動画URLはYouTube等の公開URLを使用できます。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         WEAPON
+    ========================= -->
+
+    <section class="rules-card">
+
+
+        <div class="rules-header">
+
+            <span>
+                02
+            </span>
+
+
+            <div>
+
+                <h2>
+                    武器について
+                </h2>
+
+
+                <p>
+                    使用武器の扱い
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="rules-content">
+
+
+            <div class="rule-item">
+
+                <div class="rule-number">
+                    01
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        武器種ごとに記録
+                    </h3>
+
+
+                    <p>
+                        大剣、太刀、片手剣など、
+                        使用した武器種ごとに記録を登録します。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="rule-item">
+
+                <div class="rule-number">
+                    02
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        装備変更について
+                    </h3>
+
+
+                    <p>
+                        クエスト中の装備変更などについては、
+                        各カテゴリのルールに従ってください。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         PLATFORM
+    ========================= -->
+
+    <section class="rules-card">
+
+
+        <div class="rules-header">
+
+            <span>
+                03
+            </span>
+
+
+            <div>
+
+                <h2>
+                    Platformについて
+                </h2>
+
+
+                <p>
+                    対応プラットフォーム
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="rules-content">
+
+
+            <div class="rule-item">
+
+                <div class="rule-number">
+                    01
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Platformを正しく登録
+                    </h3>
+
+
+                    <p>
+                        PC、PlayStation 5、Xboxなど、
+                        実際にプレイしたPlatformを登録してください。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         PROHIBITED
+    ========================= -->
+
+    <section class="rules-card">
+
+
+        <div class="rules-header">
+
+            <span>
+                04
+            </span>
+
+
+            <div>
+
+                <h2>
+                    禁止事項
+                </h2>
+
+
+                <p>
+                    記録として認められない行為
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="rules-content">
+
+
+            <div class="rule-item">
+
+                <div class="rule-number">
+                    01
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        外部ツールによる不正な操作
+                    </h3>
+
+
+                    <p>
+                        ゲームの動作や入力を不正に変更する
+                        外部ツールなどの使用は禁止します。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="rule-item">
+
+                <div class="rule-number">
+                    02
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        改造データの使用
+                    </h3>
+
+
+                    <p>
+                        通常のゲームプレイでは得られない状態を
+                        作り出す改造データによる記録は禁止します。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="rule-item">
+
+                <div class="rule-number">
+                    03
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        虚偽の記録
+                    </h3>
+
+
+                    <p>
+                        実際のプレイ結果と異なるタイムを
+                        登録することは禁止します。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         ADMIN NOTE
+    ========================= -->
+
+    <section class="rules-notice">
+
+
+        <div class="notice-title">
+            IMPORTANT
+        </div>
+
+
+        <p>
+
+            ルールに関する疑問や、
+            不正記録の報告がある場合は
+            サイト管理者まで連絡してください。
+
+        </p>
+
+
+    </section>
+
+
+</main>
+
+
+
+<footer>
+
+    <div>
+        MHWilds TA Database
+    </div>
+
+
+    <div>
+        Time Attack Rules
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,3889 @@
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+
+    background: #0b0d10;
+
+    color: #e7e9ec;
+
+    font-family:
+        Arial,
+        "Yu Gothic",
+        Meiryo,
+        sans-serif;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+header {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    background: rgba(15, 17, 20, 0.96);
+
+    border-bottom:
+        1px solid #282c32;
+
+    backdrop-filter: blur(10px);
+}
+
+
+.header-inner {
+    max-width: 1280px;
+
+    min-height: 64px;
+
+    margin: 0 auto;
+
+    padding:
+        0 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.logo {
+    color: #ffffff;
+
+    font-size: 19px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+}
+
+
+nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 26px;
+}
+
+
+nav a {
+    position: relative;
+
+    padding:
+        23px 0;
+
+    color: #707780;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        color 0.15s ease;
+}
+
+
+nav a:hover {
+    color: #ffffff;
+}
+
+
+nav a.active {
+    color: #ffffff;
+}
+
+
+nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    height: 2px;
+
+    background: #d9dde2;
+}
+
+
+/* ========================================
+   MAIN
+======================================== */
+
+main {
+    max-width: 1280px;
+
+    margin: 0 auto;
+
+    padding:
+        70px 22px 100px;
+}
+
+
+/* ========================================
+   TITLE
+======================================== */
+
+.ranking-title {
+    margin-bottom: 40px;
+}
+
+
+.sub-title {
+    margin:
+        0 0 10px;
+
+    color: #626973;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.ranking-title h1 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 36px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.5px;
+}
+
+
+.description {
+    margin:
+        11px 0 0;
+
+    color: #6d747e;
+
+    font-size: 11px;
+}
+
+
+/* ========================================
+   FILTER
+======================================== */
+
+.filter-card {
+    margin-bottom: 22px;
+
+    padding: 22px;
+
+    background: #15181d;
+
+    border:
+        1px solid #292e35;
+
+    border-radius: 7px;
+}
+
+
+.filter-title {
+    margin-bottom: 17px;
+
+    color: #707780;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.filter-form {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr 1fr 120px;
+
+    gap: 12px;
+
+    align-items: end;
+}
+
+
+.filter-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.filter-group label {
+    color: #5e656e;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+}
+
+
+select,
+input {
+    width: 100%;
+
+    min-height: 39px;
+
+    padding:
+        9px 11px;
+
+    background: #0e1013;
+
+    border:
+        1px solid #30353d;
+
+    border-radius: 4px;
+
+    color: #dfe2e6;
+
+    font-size: 11px;
+
+    outline: none;
+}
+
+
+select:hover,
+input:hover {
+    border-color: #454b54;
+}
+
+
+select:focus,
+input:focus {
+    border-color: #666d76;
+}
+
+
+.search-button {
+    height: 39px;
+
+    border: none;
+
+    border-radius: 4px;
+
+    background: #dfe2e5;
+
+    color: #111317;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+}
+
+
+.search-button:hover {
+    background: #ffffff;
+}
+
+
+/* ========================================
+   ACTIVE FILTER
+======================================== */
+
+.active-filters {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-bottom: 18px;
+}
+
+
+.active-filter-title {
+    color: #565d66;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.filter-tag {
+    padding:
+        5px 9px;
+
+    background: #191d22;
+
+    border:
+        1px solid #343941;
+
+    border-radius: 3px;
+
+    color: #aeb4bc;
+
+    font-size: 9px;
+}
+
+
+.clear-filter {
+    margin-left: 4px;
+
+    color: #6d747d;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+}
+
+
+.clear-filter:hover {
+    color: #ffffff;
+}
+
+
+/* ========================================
+   RANKING HEADER
+======================================== */
+
+.ranking-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 9px;
+
+    color: #5e656e;
+
+    font-size: 9px;
+}
+
+
+.ranking-header > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.result-label {
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.ranking-header strong {
+    color: #bfc4ca;
+
+    font-weight: 700;
+}
+
+
+.ranking-sort {
+    font-size: 8px;
+}
+
+
+/* ========================================
+   RANKING CARD
+======================================== */
+
+.ranking-card {
+    background: #15181d;
+
+    border:
+        1px solid #292e35;
+
+    border-radius: 7px;
+
+    overflow: hidden;
+}
+
+
+.ranking-table {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+.ranking-row {
+    display: grid;
+
+    grid-template-columns:
+        65px
+        1.15fr
+        1.5fr
+        1fr
+        1fr
+        .8fr
+        .65fr;
+
+    min-width: 930px;
+
+    align-items: center;
+
+    padding:
+        0 22px;
+}
+
+
+.ranking-head {
+    min-height: 42px;
+
+    background: #121519;
+
+    border-bottom:
+        1px solid #292e35;
+
+    color: #555c65;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+
+.record-row {
+    min-height: 68px;
+
+    border-bottom:
+        1px solid #24282e;
+
+    transition:
+        background 0.15s ease;
+}
+
+
+.record-row:last-child {
+    border-bottom: none;
+}
+
+
+.record-row:hover {
+    background: #1a1e23;
+}
+
+
+/* ========================================
+   RANK
+======================================== */
+
+.rank-column {
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+}
+
+
+.rank-medal {
+    display: inline-flex;
+
+    width: 30px;
+
+    height: 30px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 11px;
+
+    font-weight: 900;
+}
+
+
+.rank-1 {
+    background: #393429;
+
+    color: #e4c96d;
+}
+
+
+.rank-2 {
+    background: #303438;
+
+    color: #c7ccd1;
+}
+
+
+.rank-3 {
+    background: #382f2a;
+
+    color: #c99a76;
+}
+
+
+.rank-normal {
+    color: #606771;
+
+    font-size: 10px;
+}
+
+
+/* ========================================
+   PLAYER
+======================================== */
+
+.player-cell {
+    min-width: 0;
+}
+
+
+.player-name {
+    display: block;
+
+    overflow: hidden;
+
+    color: #f0f1f3;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   QUEST
+======================================== */
+
+.quest-cell {
+    min-width: 0;
+}
+
+
+.quest-link {
+    display: block;
+
+    overflow: hidden;
+
+    color: #c5c9ce;
+
+    font-size: 11px;
+
+    text-decoration: none;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+.quest-link:hover {
+    color: #ffffff;
+
+    text-decoration: underline;
+}
+
+
+/* ========================================
+   WEAPON
+======================================== */
+
+.weapon-cell {
+    overflow: hidden;
+
+    color: #939aa3;
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   TIME
+======================================== */
+
+.time-cell {
+    text-align: left;
+}
+
+
+.ranking-time {
+    color: #ffffff;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: .4px;
+}
+
+
+/* ========================================
+   PLATFORM
+======================================== */
+
+.platform-badge {
+    color: #8a919a;
+
+    font-size: 9px;
+}
+
+
+/* ========================================
+   VIDEO
+======================================== */
+
+.video-button {
+    display: inline-block;
+
+    padding:
+        5px 8px;
+
+    border:
+        1px solid #3a4048;
+
+    border-radius: 3px;
+
+    color: #aab0b7;
+
+    font-size: 7px;
+
+    font-weight: 800;
+
+    letter-spacing: .5px;
+
+    text-decoration: none;
+}
+
+
+.video-button:hover {
+    background: #24282e;
+
+    color: #ffffff;
+}
+
+
+.no-video {
+    color: #41474f;
+}
+
+
+/* ========================================
+   EMPTY
+======================================== */
+
+.empty-ranking {
+    padding:
+        80px 20px;
+
+    text-align: center;
+}
+
+
+.empty-icon {
+    margin-bottom: 15px;
+
+    color: #424850;
+
+    font-size: 28px;
+}
+
+
+.empty-ranking h2 {
+    margin:
+        0 0 8px;
+
+    color: #aeb4bb;
+
+    font-size: 17px;
+}
+
+
+.empty-ranking p {
+    margin: 0;
+
+    color: #606771;
+
+    font-size: 10px;
+}
+
+
+.clear-filter-button {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding:
+        8px 12px;
+
+    border:
+        1px solid #3a4048;
+
+    border-radius: 3px;
+
+    color: #9ca2aa;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+}
+
+
+/* ========================================
+   QUEST LIST
+======================================== */
+
+.quest-list-card {
+    background: #15181d;
+
+    border:
+        1px solid #292e35;
+
+    border-radius: 7px;
+
+    overflow: hidden;
+}
+
+
+.quest-list {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.quest-list-item {
+    display: grid;
+
+    grid-template-columns:
+        65px 1fr 40px;
+
+    align-items: center;
+
+    padding:
+        21px 24px;
+
+    border-bottom:
+        1px solid #292e35;
+
+    color: #ffffff;
+
+    text-decoration: none;
+}
+
+
+.quest-list-item:last-child {
+    border-bottom: none;
+}
+
+
+.quest-list-item:hover {
+    background: #1a1e23;
+}
+
+
+.quest-number {
+    color: #4f565f;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size: 10px;
+}
+
+
+.quest-name {
+    color: #e3e5e8;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.quest-description {
+    margin-top: 5px;
+
+    color: #606771;
+
+    font-size: 9px;
+}
+
+
+.quest-arrow {
+    color: #656c75;
+
+    font-size: 17px;
+
+    text-align: right;
+}
+
+
+/* ========================================
+   ADMIN
+======================================== */
+
+.admin-card {
+    margin-bottom: 25px;
+
+    padding: 25px;
+
+    background: #15181d;
+
+    border:
+        1px solid #292e35;
+
+    border-radius: 7px;
+}
+
+
+.admin-card-title {
+    margin-bottom: 20px;
+}
+
+
+.admin-card-title h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 18px;
+}
+
+
+.admin-card-title p {
+    margin:
+        6px 0 0;
+
+    color: #626974;
+
+    font-size: 10px;
+}
+
+
+.admin-form {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 18px;
+}
+
+
+.admin-form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.admin-form-group label {
+    color: #606771;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+
+.admin-form-group small {
+    color: #4f565f;
+
+    font-size: 8px;
+}
+
+
+.admin-submit {
+    grid-column:
+        1 / -1;
+
+    height: 40px;
+
+    border: none;
+
+    border-radius: 4px;
+
+    background: #dfe2e5;
+
+    color: #111317;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+}
+
+
+.admin-submit:hover {
+    background: #ffffff;
+}
+
+
+.admin-inline-form {
+    display: flex;
+
+    gap: 9px;
+}
+
+
+.admin-inline-form input {
+    flex: 1;
+}
+
+
+.admin-small-button {
+    min-width: 65px;
+
+    padding:
+        0 15px;
+
+    border: none;
+
+    border-radius: 4px;
+
+    background: #dfe2e5;
+
+    color: #111317;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+
+.admin-small-button:hover {
+    background: #ffffff;
+}
+
+
+.admin-record {
+    padding:
+        15px 0;
+
+    border-top:
+        1px solid #292e35;
+}
+
+
+.admin-record-main {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr 1.5fr 1fr 1fr .8fr;
+
+    gap: 15px;
+
+    align-items: center;
+
+    color: #9da3ab;
+
+    font-size: 10px;
+}
+
+
+.admin-record-player {
+    color: #ffffff;
+
+    font-weight: 700;
+}
+
+
+.admin-record-time {
+    color: #ffffff;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-weight: 800;
+}
+
+
+.admin-record-actions {
+    display: flex;
+
+    gap: 7px;
+
+    margin-top: 10px;
+}
+
+
+.edit-button,
+.delete-button {
+    padding:
+        5px 9px;
+
+    border-radius: 3px;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+.edit-button {
+    border:
+        1px solid #3d434b;
+
+    color: #aeb4bb;
+}
+
+
+.delete-button {
+    border:
+        1px solid #563535;
+
+    color: #c27d7d;
+}
+
+
+/* ========================================
+   DATABASE MASTER
+======================================== */
+
+.master-section {
+    margin-top: 30px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid #292e35;
+}
+
+
+.master-section:first-of-type {
+    margin-top: 0;
+
+    padding-top: 0;
+
+    border-top: none;
+}
+
+
+.master-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+
+.master-header h3 {
+    display: inline-block;
+
+    margin:
+        0 10px 0 0;
+
+    color: #ffffff;
+
+    font-size: 14px;
+}
+
+
+.master-header span {
+    color: #555c65;
+
+    font-size: 8px;
+}
+
+
+.master-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+
+    margin-top: 12px;
+}
+
+
+.master-item {
+    padding:
+        9px 12px;
+
+    background: #101317;
+
+    border:
+        1px solid #292e35;
+
+    border-radius: 3px;
+
+    color: #aeb4bb;
+
+    font-size: 9px;
+}
+
+
+.master-item:hover {
+    background: #1d2127;
+
+    color: #ffffff;
+}
+
+
+/* ========================================
+   RULES
+======================================== */
+
+.rules-card {
+    margin-bottom: 20px;
+
+    background: #15181d;
+
+    border:
+        1px solid #292e35;
+
+    border-radius: 7px;
+
+    overflow: hidden;
+}
+
+
+.rules-header {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 25px;
+
+    background: #121519;
+
+    border-bottom:
+        1px solid #292e35;
+}
+
+
+.rules-header > span {
+    color: #555c65;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size: 10px;
+}
+
+
+.rules-header h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 16px;
+}
+
+
+.rules-header p {
+    margin:
+        5px 0 0;
+
+    color: #626974;
+
+    font-size: 9px;
+}
+
+
+.rules-content {
+    padding:
+        5px 25px;
+}
+
+
+.rule-item {
+    display: grid;
+
+    grid-template-columns:
+        45px 1fr;
+
+    gap: 15px;
+
+    padding:
+        25px 0;
+
+    border-bottom:
+        1px solid #292e35;
+}
+
+
+.rule-item:last-child {
+    border-bottom: none;
+}
+
+
+.rule-number {
+    color: #555c65;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size: 9px;
+}
+
+
+.rule-item h3 {
+    margin:
+        0 0 7px;
+
+    color: #d8dbe0;
+
+    font-size: 12px;
+}
+
+
+.rule-item p {
+    margin: 0;
+
+    color: #737a84;
+
+    font-size: 10px;
+
+    line-height: 1.8;
+}
+
+
+.rules-notice {
+    padding:
+        20px 25px;
+
+    background: #15181d;
+
+    border:
+        1px solid #292e35;
+
+    border-left:
+        3px solid #626973;
+
+    border-radius: 5px;
+}
+
+
+.notice-title {
+    margin-bottom: 7px;
+
+    color: #9da3ab;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.rules-notice p {
+    margin: 0;
+
+    color: #6e757e;
+
+    font-size: 9px;
+
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    max-width: 1280px;
+
+    margin: 0 auto;
+
+    padding:
+        25px 22px;
+
+    border-top:
+        1px solid #292e35;
+
+    color: #4f565f;
+
+    font-size: 8px;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 900px) {
+
+    .filter-form {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .search-button {
+        width: 100%;
+    }
+
+
+    .admin-form {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .admin-submit {
+        grid-column: auto;
+    }
+
+
+    .master-list {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .header-inner {
+        min-height: auto;
+
+        padding:
+            15px;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    nav {
+        gap: 18px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    nav a {
+        padding:
+            7px 0;
+    }
+
+
+    nav a.active::after {
+        bottom: 0;
+    }
+
+
+    main {
+        padding:
+            45px 12px 70px;
+    }
+
+
+    .ranking-title h1 {
+        font-size: 28px;
+    }
+
+
+    .filter-form {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .ranking-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 7px;
+    }
+
+
+    .master-list {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .admin-inline-form {
+        flex-direction: column;
+    }
+
+
+    .admin-small-button {
+        min-height: 38px;
+    }
+
+
+    footer {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+}
+
+/* =========================
+   BACKUP
+========================= */
+
+.backup-button {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    height: 40px;
+
+}
+
+/* ==================================================
+   RANKING
+================================================== */
+
+.ranking-card {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 30px auto;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+}
+
+
+.ranking-header {
+
+    display: grid;
+
+    grid-template-columns:
+        90px
+        1.5fr
+        1.2fr
+        150px
+        120px
+        100px;
+
+    gap: 10px;
+
+    padding: 16px 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    background: #151515;
+
+}
+
+
+.ranking-row {
+
+    display: grid;
+
+    grid-template-columns:
+        90px
+        1.5fr
+        1.2fr
+        150px
+        120px
+        100px;
+
+    gap: 10px;
+
+    align-items: center;
+
+    padding: 18px 20px;
+
+    border-top: 1px solid #292929;
+
+    background: #101010;
+
+    transition: 0.2s;
+
+}
+
+
+.ranking-row:hover {
+
+    background: #181818;
+
+}
+
+
+.rank-number {
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+}
+
+
+.player-name {
+
+    font-weight: bold;
+
+}
+
+
+.weapon-name {
+
+    font-size: 14px;
+
+}
+
+
+.record-time {
+
+    font-family: monospace;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+}
+
+
+.platform-name {
+
+    font-size: 13px;
+
+}
+
+
+.video-link a {
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}
+
+
+.no-records {
+
+    padding: 60px 20px;
+
+    text-align: center;
+
+}
+
+
+.no-records p {
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+
+}
+
+
+.no-records span {
+
+    opacity: 0.6;
+
+}
+
+
+.record-count {
+
+    text-align: center;
+
+    margin: 20px;
+
+    font-size: 12px;
+
+    opacity: 0.5;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* ==================================================
+   TOP 3
+================================================== */
+
+.rank-first {
+
+    min-height: 75px;
+
+}
+
+
+.rank-first .record-time {
+
+    font-size: 26px;
+
+}
+
+
+.rank-second .record-time {
+
+    font-size: 24px;
+
+}
+
+
+.rank-third .record-time {
+
+    font-size: 23px;
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 800px) {
+
+
+    .ranking-header {
+
+        display: none;
+
+    }
+
+
+    .ranking-row {
+
+        display: grid;
+
+        grid-template-columns:
+            55px
+            1fr
+            120px;
+
+        gap: 10px;
+
+        padding: 18px 15px;
+
+    }
+
+
+    .rank-number {
+
+        grid-row: span 2;
+
+    }
+
+
+    .player-name {
+
+        grid-column: 2;
+
+    }
+
+
+    .weapon-name {
+
+        grid-column: 2;
+
+        opacity: 0.7;
+
+    }
+
+
+    .record-time {
+
+        grid-column: 3;
+
+        grid-row: 1 / span 2;
+
+        text-align: right;
+
+    }
+
+
+    .platform-name {
+
+        display: none;
+
+    }
+
+
+    .video-link {
+
+        display: none;
+
+    }
+
+}
+
+/* ==================================================
+   WEAPON ICON
+================================================== */
+
+.weapon-name {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.weapon-icon {
+
+    width: 34px;
+
+    height: 34px;
+
+    object-fit: contain;
+
+}
+
+
+@media (max-width: 800px) {
+
+    .weapon-icon {
+
+        width: 28px;
+
+        height: 28px;
+
+    }
+
+}
+
+/* ==================================================
+   QUEST SELECTOR
+================================================== */
+
+.quest-selector {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 25px auto;
+
+    display: flex;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    padding-bottom: 8px;
+
+}
+
+
+.quest-selector-button {
+
+    flex-shrink: 0;
+
+    padding: 10px 16px;
+
+    border: 1px solid #333;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    background: #111;
+
+    color: inherit;
+
+    transition: 0.2s;
+
+}
+
+
+.quest-selector-button:hover {
+
+    background: #222;
+
+}
+
+
+.quest-selector-button.selected {
+
+    background: #333;
+
+    border-color: #777;
+
+    font-weight: bold;
+
+}
+
+
+/* ==================================================
+   CLEAR FILTER
+================================================== */
+
+.current-filter {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 15px auto;
+
+    padding: 12px 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    background: #111;
+
+    border: 1px solid #292929;
+
+    border-radius: 8px;
+
+}
+
+
+.current-filter span {
+
+    font-size: 11px;
+
+    opacity: 0.5;
+
+    letter-spacing: 1px;
+
+}
+
+
+.current-filter strong {
+
+    font-size: 13px;
+
+}
+
+
+.current-filter a {
+
+    margin-left: auto;
+
+    font-size: 12px;
+
+    text-decoration: none;
+
+    opacity: 0.7;
+
+}
+
+
+.current-filter a:hover {
+
+    opacity: 1;
+
+}
+
+/* ==================================================
+   ADMIN EDIT
+================================================== */
+
+.admin-page {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    margin: 50px auto;
+
+}
+
+
+.admin-title {
+
+    margin-bottom: 30px;
+
+}
+
+
+.admin-title p {
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.5;
+
+}
+
+
+.admin-title h1 {
+
+    margin-top: 5px;
+
+}
+
+
+.admin-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+.admin-form label {
+
+    margin-top: 10px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+}
+
+
+.admin-form input,
+.admin-form select {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px;
+
+    border: 1px solid #333;
+
+    border-radius: 6px;
+
+    background: #111;
+
+    color: inherit;
+
+}
+
+
+.admin-buttons {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+}
+
+
+.admin-save-button,
+.admin-cancel-button {
+
+    padding: 13px 25px;
+
+    border-radius: 6px;
+
+    border: 1px solid #333;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+}
+
+
+.admin-save-button {
+
+    background: #333;
+
+    color: white;
+
+}
+
+
+.admin-cancel-button {
+
+    background: #111;
+
+    color: inherit;
+
+}
+
+/* ==================================================
+   ADMIN PANEL
+================================================== */
+
+.admin-section {
+
+    margin-top: 40px;
+
+    padding: 25px;
+
+    background: #111;
+
+    border: 1px solid #292929;
+
+    border-radius: 10px;
+
+}
+
+
+.admin-section h2 {
+
+    margin-top: 0;
+
+    margin-bottom: 25px;
+
+    font-size: 16px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.admin-section-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.backup-button {
+
+    padding: 9px 14px;
+
+    border: 1px solid #333;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+}
+
+
+.admin-record-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.admin-record {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 16px 0;
+
+    border-top: 1px solid #292929;
+
+}
+
+
+.admin-record-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.admin-record-info span {
+
+    font-size: 13px;
+
+    opacity: 0.7;
+
+}
+
+
+.admin-time {
+
+    font-family: monospace;
+
+    font-size: 18px;
+
+}
+
+
+.admin-record-actions {
+
+    display: flex;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+
+}
+
+
+.edit-button,
+.delete-button {
+
+    padding: 8px 12px;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+}
+
+
+.edit-button {
+
+    background: #222;
+
+    border: 1px solid #444;
+
+}
+
+
+.delete-button {
+
+    background: #180d0d;
+
+    border: 1px solid #4a2222;
+
+}
+
+
+.edit-button:hover,
+.delete-button:hover,
+.backup-button:hover {
+
+    opacity: 0.7;
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 800px) {
+
+
+    .admin-record {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .admin-record-actions {
+
+        width: 100%;
+
+    }
+
+
+    .edit-button,
+    .delete-button {
+
+        flex: 1;
+
+        text-align: center;
+
+    }
+
+
+    .admin-section-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+}
+
+/* ==================================================
+   RECORD DETAIL
+================================================== */
+
+.record-detail {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    margin: 50px auto;
+
+}
+
+
+.record-detail-title {
+
+    margin-bottom: 30px;
+
+}
+
+
+.record-detail-title p {
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.5;
+
+}
+
+
+.record-detail-title h1 {
+
+    margin-top: 5px;
+
+    font-size: 32px;
+
+}
+
+
+.record-detail-rank {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px;
+
+    margin-bottom: 10px;
+
+    background: #151515;
+
+    border: 1px solid #292929;
+
+    border-radius: 10px;
+
+}
+
+
+.detail-medal {
+
+    font-size: 48px;
+
+}
+
+
+.detail-rank-number {
+
+    width: 60px;
+
+    font-size: 40px;
+
+    font-weight: bold;
+
+    text-align: center;
+
+}
+
+
+.record-detail-rank span {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.5;
+
+}
+
+
+.record-detail-rank strong {
+
+    font-size: 20px;
+
+}
+
+
+.record-detail-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 20px;
+
+    border-bottom: 1px solid #292929;
+
+}
+
+
+.record-detail-item span {
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.5;
+
+}
+
+
+.record-detail-item strong {
+
+    font-size: 16px;
+
+}
+
+
+.record-detail-time {
+
+    margin: 20px 0;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: #151515;
+
+    border-radius: 10px;
+
+}
+
+
+.record-detail-time span {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.5;
+
+}
+
+
+.record-detail-time strong {
+
+    font-family: monospace;
+
+    font-size: 42px;
+
+}
+
+
+.record-detail-video {
+
+    margin-top: 25px;
+
+    text-align: center;
+
+}
+
+
+.record-detail-video a {
+
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    border: 1px solid #444;
+
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+}
+
+
+.record-detail-back {
+
+    margin-top: 30px;
+
+    text-align: center;
+
+}
+
+
+.record-detail-back a {
+
+    font-size: 13px;
+
+    text-decoration: none;
+
+    opacity: 0.6;
+
+}
+
+
+.record-detail-back a:hover {
+
+    opacity: 1;
+
+}
+
+/* ==================================================
+   RECORD LINK
+================================================== */
+
+.record-player-link {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+.record-player-link:hover {
+
+    text-decoration: underline;
+
+}
+
+/* ==================================================
+   PLAYER PAGE
+================================================== */
+
+.player-page {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 50px auto;
+
+}
+
+
+.player-page-title {
+
+    margin-bottom: 30px;
+
+}
+
+
+.player-page-title p {
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.5;
+
+}
+
+
+.player-page-title h1 {
+
+    margin: 5px 0;
+
+    font-size: 38px;
+
+}
+
+
+.player-page-title span {
+
+    font-size: 12px;
+
+    opacity: 0.5;
+
+}
+
+
+.player-stat {
+
+    display: inline-flex;
+
+    flex-direction: column;
+
+    padding: 18px 25px;
+
+    margin-bottom: 25px;
+
+    background: #151515;
+
+    border: 1px solid #292929;
+
+    border-radius: 8px;
+
+}
+
+
+.player-stat span {
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.5;
+
+}
+
+
+.player-stat strong {
+
+    margin-top: 5px;
+
+    font-size: 28px;
+
+}
+
+
+.player-records {
+
+    border: 1px solid #292929;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+}
+
+
+.player-record-header,
+.player-record {
+
+    display: grid;
+
+    grid-template-columns:
+        2fr
+        1fr
+        150px
+        120px
+        70px;
+
+    gap: 15px;
+
+    align-items: center;
+
+    padding: 16px 20px;
+
+}
+
+
+.player-record-header {
+
+    background: #151515;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    opacity: 0.6;
+
+}
+
+
+.player-record {
+
+    color: inherit;
+
+    text-decoration: none;
+
+    border-top: 1px solid #292929;
+
+    background: #101010;
+
+    transition: 0.2s;
+
+}
+
+
+.player-record:hover {
+
+    background: #181818;
+
+}
+
+
+.player-quest {
+
+    font-weight: bold;
+
+}
+
+
+.player-record-time {
+
+    font-family: monospace;
+
+    font-size: 18px;
+
+}
+
+
+.player-back {
+
+    margin-top: 30px;
+
+    text-align: center;
+
+}
+
+
+.player-back a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+    opacity: 0.6;
+
+}
+
+
+.player-back a:hover {
+
+    opacity: 1;
+
+}
+
+
+@media (max-width: 800px) {
+
+    .player-record-header {
+
+        display: none;
+
+    }
+
+
+    .player-record {
+
+        grid-template-columns:
+            1fr
+            100px;
+
+        gap: 8px;
+
+    }
+
+
+    .player-quest {
+
+        grid-column: 1 / 3;
+
+    }
+
+
+    .player-record-time {
+
+        grid-column: 2;
+
+        grid-row: 2;
+
+        text-align: right;
+
+    }
+
+
+    .player-record span:nth-child(4) {
+
+        grid-column: 1;
+
+        grid-row: 2;
+
+        opacity: 0.6;
+
+    }
+
+
+    .player-record span:nth-child(5) {
+
+        display: none;
+
+    }
+
+}
+
+/* ==================================================
+   WORLD RECORD
+================================================== */
+
+.world-record {
+
+    max-width: 1100px;
+
+    margin: 40px auto 20px;
+
+    border: 1px solid #444;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    background: #111;
+
+}
+
+
+.world-record-label {
+
+    padding: 10px 20px;
+
+    background: #1b1b1b;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+
+}
+
+
+.world-record-content {
+
+    display: grid;
+
+    grid-template-columns:
+        2fr
+        1.5fr
+        1fr
+        1fr
+        1fr;
+
+    gap: 20px;
+
+    padding: 25px;
+
+}
+
+
+.world-record-content span {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.5;
+
+}
+
+
+.world-record-quest h1 {
+
+    margin: 0;
+
+    font-size: 24px;
+
+}
+
+
+.world-record-player a {
+
+    color: inherit;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+}
+
+
+.world-record-time strong {
+
+    font-family: monospace;
+
+    font-size: 26px;
+
+}
+
+
+.world-record-weapon p,
+.world-record-platform p {
+
+    margin: 0;
+
+}
+
+
+/* ==================================================
+   RANKING
+================================================== */
+
+.ranking-section {
+
+    max-width: 1100px;
+
+    margin: 40px auto;
+
+}
+
+
+.ranking-title {
+
+    margin-bottom: 25px;
+
+}
+
+
+.ranking-title p {
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.5;
+
+}
+
+
+.ranking-title h1 {
+
+    margin: 5px 0;
+
+    font-size: 32px;
+
+}
+
+
+/* ==================================================
+   FILTER
+================================================== */
+
+.ranking-filter {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.ranking-filter select,
+.ranking-filter button {
+
+    padding: 12px 15px;
+
+    border: 1px solid #333;
+
+    border-radius: 6px;
+
+    background: #151515;
+
+    color: inherit;
+
+}
+
+
+.ranking-filter button {
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+}
+
+
+.ranking-filter button:hover {
+
+    background: #252525;
+
+}
+
+
+/* ==================================================
+   FILTERED BEST
+================================================== */
+
+.filtered-best {
+
+    display: grid;
+
+    grid-template-columns:
+        1.3fr
+        1fr
+        1fr
+        1fr;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+
+    padding: 20px;
+
+    border: 1px solid #292929;
+
+    border-radius: 8px;
+
+    background: #151515;
+
+}
+
+
+.filtered-best span {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.5;
+
+}
+
+
+.filtered-best strong {
+
+    font-family: monospace;
+
+    font-size: 22px;
+
+}
+
+
+.filtered-best a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+}
+
+
+.filtered-best p {
+
+    margin: 0;
+
+}
+
+
+/* ==================================================
+   RANKING TABLE
+================================================== */
+
+.ranking-table {
+
+    border: 1px solid #292929;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+}
+
+
+.ranking-header,
+.ranking-row {
+
+    display: grid;
+
+    grid-template-columns:
+        70px
+        1.2fr
+        2fr
+        1fr
+        150px
+        100px;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 16px 20px;
+
+}
+
+
+.ranking-header {
+
+    background: #151515;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    opacity: 0.5;
+
+}
+
+
+.ranking-row {
+
+    color: inherit;
+
+    text-decoration: none;
+
+    border-top: 1px solid #292929;
+
+    background: #101010;
+
+    transition: 0.2s;
+
+}
+
+
+.ranking-row:hover {
+
+    background: #181818;
+
+}
+
+
+.ranking-time {
+
+    font-family: monospace;
+
+    font-size: 18px;
+
+}
+
+
+.record-player-link {
+
+    font-weight: bold;
+
+}
+
+
+.no-records {
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+}
+
+
+.no-records p {
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+}
+
+
+.no-records span {
+
+    opacity: 0.5;
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 800px) {
+
+
+    .world-record-content {
+
+        grid-template-columns:
+            1fr
+            1fr;
+
+    }
+
+
+    .world-record-quest {
+
+        grid-column: 1 / 3;
+
+    }
+
+
+    .ranking-filter {
+
+        flex-direction: column;
+
+    }
+
+
+    .ranking-filter select,
+    .ranking-filter button {
+
+        width: 100%;
+
+    }
+
+
+    .filtered-best {
+
+        grid-template-columns:
+            1fr
+            1fr;
+
+    }
+
+
+    .ranking-header {
+
+        display: none;
+
+    }
+
+
+    .ranking-row {
+
+        grid-template-columns:
+            45px
+            1fr
+            100px;
+
+        gap: 10px;
+
+    }
+
+
+    .ranking-row span:nth-child(3),
+    .ranking-row span:nth-child(4),
+    .ranking-row span:nth-child(6) {
+
+        display: none;
+
+    }
+
+
+    .ranking-time {
+
+        text-align: right;
+
+    }
+
+}
+
+/* ==================================================
+   QUEST LIST
+================================================== */
+
+.quests-page {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 50px auto;
+
+}
+
+
+.quests-title {
+
+    margin-bottom: 30px;
+
+}
+
+
+.quests-title p {
+
+    margin: 0;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.5;
+
+}
+
+
+.quests-title h1 {
+
+    margin: 5px 0;
+
+    font-size: 36px;
+
+}
+
+
+.quests-title span {
+
+    font-size: 11px;
+
+    opacity: 0.5;
+
+}
+
+
+/* ==================================================
+   SEARCH
+================================================== */
+
+.quest-search {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.quest-search input {
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 14px 16px;
+
+    border: 1px solid #333;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    background: #151515;
+
+    color: inherit;
+
+    font-size: 14px;
+
+}
+
+
+.quest-search input:focus {
+
+    border-color: #666;
+
+}
+
+
+.quest-search button {
+
+    padding: 14px 22px;
+
+    border: 1px solid #333;
+
+    border-radius: 7px;
+
+    background: #1c1c1c;
+
+    color: inherit;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+}
+
+
+.quest-search button:hover {
+
+    background: #292929;
+
+}
+
+
+.quest-search a {
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 15px;
+
+    border: 1px solid #333;
+
+    border-radius: 7px;
+
+    color: inherit;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+}
+
+
+.quest-search a:hover {
+
+    background: #1c1c1c;
+
+}
+
+
+/* ==================================================
+   RESULT COUNT
+================================================== */
+
+.quest-result-count {
+
+    margin-bottom: 15px;
+
+    font-size: 12px;
+
+    opacity: 0.6;
+
+}
+
+
+.quest-result-count strong {
+
+    color: inherit;
+
+    font-size: 15px;
+
+}
+
+
+/* ==================================================
+   QUEST LIST
+================================================== */
+
+.quest-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.quest-card {
+
+    display: grid;
+
+    grid-template-columns:
+        70px
+        1fr
+        50px;
+
+    align-items: center;
+
+    min-height: 85px;
+
+    padding: 0 25px;
+
+    border: 1px solid #292929;
+
+    border-radius: 9px;
+
+    background: #101010;
+
+    color: inherit;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+
+}
+
+
+.quest-card:hover {
+
+    background: #181818;
+
+    border-color: #444;
+
+    transform: translateX(3px);
+
+}
+
+
+.quest-card-number {
+
+    font-family: monospace;
+
+    font-size: 18px;
+
+    opacity: 0.35;
+
+}
+
+
+.quest-card-name span {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.4;
+
+}
+
+
+.quest-card-name h2 {
+
+    margin: 0;
+
+    font-size: 18px;
+
+}
+
+
+.quest-card-arrow {
+
+    text-align: right;
+
+    font-size: 22px;
+
+    opacity: 0.4;
+
+}
+
+
+.quest-card:hover .quest-card-arrow {
+
+    opacity: 1;
+
+}
+
+
+/* ==================================================
+   EMPTY
+================================================== */
+
+.quest-empty {
+
+    padding: 60px 20px;
+
+    border: 1px solid #292929;
+
+    border-radius: 9px;
+
+    text-align: center;
+
+}
+
+
+.quest-empty strong {
+
+    font-size: 18px;
+
+}
+
+
+.quest-empty p {
+
+    margin-top: 10px;
+
+    font-size: 12px;
+
+    opacity: 0.5;
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+
+    .quests-page {
+
+        margin: 30px auto;
+
+        padding: 0 15px;
+
+    }
+
+
+    .quests-title h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    .quest-search {
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .quest-search input {
+
+        width: 100%;
+
+        flex-basis: 100%;
+
+    }
+
+
+    .quest-search button {
+
+        flex: 1;
+
+    }
+
+
+    .quest-search a {
+
+        justify-content: center;
+
+        min-height: 45px;
+
+        flex: 1;
+
+    }
+
+
+    .quest-card {
+
+        grid-template-columns:
+            45px
+            1fr
+            35px;
+
+        min-height: 75px;
+
+        padding: 0 15px;
+
+    }
+
+
+    .quest-card-name h2 {
+
+        font-size: 15px;
+
+    }
+
+}
+
+/* ==================================================
+   FINAL MOBILE UI
+================================================== */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .header-inner {
+        padding: 12px 15px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+
+    /* WORLD RECORD */
+
+    .world-record {
+        margin: 20px 15px;
+    }
+
+    .world-record-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        padding: 20px;
+    }
+
+    .world-record-quest {
+        grid-column: 1 / 3;
+    }
+
+    .world-record-quest h1 {
+        font-size: 20px;
+        word-break: break-word;
+    }
+
+    .world-record-time strong {
+        font-size: 22px;
+    }
+
+
+    /* RANKING */
+
+    .ranking-section {
+        margin: 30px 15px;
+    }
+
+    .ranking-title h1 {
+        font-size: 25px;
+    }
+
+
+    /* FILTER */
+
+    .ranking-filter {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .ranking-filter select,
+    .ranking-filter button {
+        width: 100%;
+        min-height: 45px;
+    }
+
+
+    /* BEST RECORD */
+
+    .filtered-best {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        padding: 15px;
+    }
+
+
+    /* RANKING TABLE */
+
+    .ranking-table {
+        width: 100%;
+    }
+
+    .ranking-header {
+        display: none;
+    }
+
+    .ranking-row {
+        grid-template-columns: 40px 1fr 100px;
+        gap: 8px;
+        padding: 15px;
+        min-height: 60px;
+    }
+
+    .ranking-row span:nth-child(3),
+    .ranking-row span:nth-child(4),
+    .ranking-row span:nth-child(6) {
+        display: none;
+    }
+
+    .ranking-time {
+        text-align: right;
+        font-size: 15px;
+    }
+
+
+    /* QUEST PAGE */
+
+    .quest-page {
+        margin: 30px 15px;
+    }
+
+    .quest-page-title h1 {
+        font-size: 25px;
+        word-break: break-word;
+    }
+
+    .weapon-ranking-header {
+        display: none;
+    }
+
+    .weapon-ranking-row {
+        grid-template-columns: 45px 1fr;
+        gap: 8px;
+        padding: 15px;
+    }
+
+    .weapon-ranking-row span:nth-child(4) {
+        grid-column: 2;
+        opacity: 0.5;
+        font-size: 11px;
+    }
+
+    .weapon-ranking-time {
+        grid-column: 2;
+        font-size: 17px;
+    }
+
+
+    /* QUEST LIST */
+
+    .quests-page {
+        margin: 30px 15px;
+    }
+
+    .quests-title h1 {
+        font-size: 28px;
+    }
+
+    .quest-search {
+        flex-wrap: wrap;
+    }
+
+    .quest-search input {
+        width: 100%;
+        flex-basis: 100%;
+        min-height: 45px;
+    }
+
+    .quest-search button {
+        flex: 1;
+        min-height: 45px;
+    }
+
+    .quest-search a {
+        flex: 1;
+        min-height: 45px;
+        justify-content: center;
+    }
+
+    .quest-card {
+        grid-template-columns: 40px 1fr 30px;
+        min-height: 70px;
+        padding: 0 15px;
+    }
+
+    .quest-card-name h2 {
+        font-size: 14px;
+        word-break: break-word;
+    }
+
+
+    /* GENERAL */
+
+    main {
+        width: 100%;
+    }
+
+    input,
+    select,
+    button {
+        font-size: 16px;
+    }
+
+}
